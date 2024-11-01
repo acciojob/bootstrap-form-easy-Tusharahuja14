@@ -85,15 +85,15 @@
 
     <script>
         // Prevent form submission if validation fails
-        document.getElementById("application-form").addEventListener("submit", function(event) {
-            const inputs = this.querySelectorAll("input, select");
-            inputs.forEach(input => {
-                if (!input.checkValidity()) {
-                    input.nextElementSibling.style.display = "block";
-                    event.preventDefault();
-                }
-            });
-        });
+       document.getElementById("application-form").addEventListener("submit", function(event) {
+    const inputs = this.querySelectorAll("input, select");
+    inputs.forEach(input => {
+        if (!input.checkValidity()) {
+            input.parentElement.querySelector(".invalid-feedback").style.display = "block";
+            event.preventDefault();
+        }
+    });
+});
     </script>
 </body>
 
